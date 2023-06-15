@@ -1,0 +1,4 @@
+- The user should be able to search for movies by title
+- The user should be able to see his watch history
+- The user should be able to rate movies
+- The user should be able to see movie details

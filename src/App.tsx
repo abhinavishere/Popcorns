@@ -1,9 +1,8 @@
-import Search from "./components/Search/Search";
-
 function App() {
   return (
     <>
-      <Search />
+      {/* Navbar <  search + resultsCount */}
+      {/* main < div*2 < MovieList + WatchedMovies */}
     </>
   );
 }
