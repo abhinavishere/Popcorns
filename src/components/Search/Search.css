@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #fff;
+  padding-inline: 1rem;
+}
+
+.header > input {
+  max-width: 480px;
+  width: 100%;
+  flex: 1 0;
+  font-family: inherit;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
