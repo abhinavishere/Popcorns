@@ -1,37 +1,15 @@
-import { useEffect, useState } from "react";
-
-const KEY = import.meta.env.VITE_APIKEY;
+import useMovies from "../hooks/useMovies";
 
 const MovieDetails = ({ id }: { id: string | undefined }) => {
-  const [movie, setMovie] = useState<Movie | undefined>();
-  const [loading, setLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    async function getMovieById() {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${KEY}&i=${id}`
-        );
-        const data = await res.json();
-        setMovie(data);
-        setLoading(false);
-
-        console.log(data);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    if (!id) return;
-    getMovieById();
-
-    return () => setMovie(undefined);
-  }, [id]);
+  const { value: movie, isLoading } = useMovies<Movie>({
+    operation: "SearchById",
+    query: id,
+  });
 
   return (
     <div className="movieDetails">
       {!id && <p>Click on the movie to see details</p>}
-      {loading && !movie && <p>Loading...</p>}
+      {isLoading && !movie && <p>Loading...</p>}
       {id && movie && (
         <>
           <div className="movieDetailsBanner">
@@ -47,7 +25,7 @@ const MovieDetails = ({ id }: { id: string | undefined }) => {
               </p>
               <p>{movie?.Genre}</p>
               <div className="ratingsContainer">
-                {movie?.Ratings?.map((rating, index) => (
+                {movie?.Ratings?.map((rating: any, index: number) => (
                   <RatingsWrapper
                     key={index}
                     source={rating?.Source}

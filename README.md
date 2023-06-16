@@ -1,4 +1,5 @@
-- The user should be able to search for movies by title
-- The user should be able to see his watch history
-- The user should be able to rate movies
-- The user should be able to see movie details
+# POPCORNS
+
+An IMDB alike web app where you can search for movies by title and check ratings and other information about the movie
+
+Developed by [Abhinav Sawarkar](https://github.com/abhinavishere)

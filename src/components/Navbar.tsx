@@ -3,7 +3,7 @@ const Navbar = ({
   totalResults,
 }: {
   setQuery: (arg: string) => void;
-  totalResults: number;
+  totalResults: number | undefined;
 }) => {
   return (
     <header>
