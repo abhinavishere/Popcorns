@@ -19,19 +19,19 @@ function useMovies<T>({
         let data;
         if (operation === "SearchByQuery") {
           res = await fetch(
-            `http://www.omdbapi.com/?apikey=${APIKEY}&s=${query}`
+            `https://www.omdbapi.com/?apikey=${APIKEY}&s=${query}`
           );
           data = await res?.json();
           setValue(data.Search);
         } else if (operation === "SearchById") {
           res = await fetch(
-            `http://www.omdbapi.com/?apikey=${APIKEY}&i=${query}`
+            `https://www.omdbapi.com/?apikey=${APIKEY}&i=${query}`
           );
           data = await res?.json();
           setValue(data);
         } else if (operation === "SearchByTitle") {
           res = await fetch(
-            `http://www.omdbapi.com/?apikey=${APIKEY}&t=${query}`
+            `https://www.omdbapi.com/?apikey=${APIKEY}&t=${query}`
           );
           data = await res?.json();
           setValue(data);
